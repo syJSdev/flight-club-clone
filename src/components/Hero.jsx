@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import heroImg from '../assets/images/top-image.jpg';
-import CityDropdown from './CityDropdown';
+import CitySelectionPopupContent from './CitySelectionPopupContent';
+import Popup from './Popup';
 
-const Hero = ({ children, onClickOpenLocations }) => {
+const Hero = () => {
+  const [openSelectionPopup, setOpenSelectionPopup] = useState(false);
+
   return (
-    <section className="relative h-screen max-h-[48rem] w-full overflow-hidden">
-      <img
-        src={heroImg}
-        alt="Flight Club Venue"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
-      />
+    <section className="relative h-screen max-h-[32rem] w-full overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-0 h-full w-full">
+        <img src={heroImg} alt="Flight Club Venue" className="absolute inset-0 h-full w-full object-cover object-top" />
+        <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-[#000] to-transparent to-50%" />
+      </div>
+
       <div className="mx-auto flex h-full w-full max-w-lg items-end justify-center lg:max-w-xl">
         <button
-          class="font-semi-bold border-x-none border-t-none w-fit-content relative z-20 mx-auto mb-12 flex min-w-[24rem] appearance-none items-center justify-center border-b border-white bg-transparent pt-1 pr-8 pb-0 text-2xl text-white uppercase"
-          onClick={onClickOpenLocations}
+          className="font-semi-bold border-x-none border-t-none w-fit-content relative mx-auto mb-12 flex min-w-[32rem] appearance-none items-center justify-center border-b border-white bg-transparent px-8 py-2 text-2xl tracking-widest text-white uppercase"
+          onClick={() => setOpenSelectionPopup(true)}
           data-test="homepage-mobile-prominent-venue-selector"
         >
           Select Your Venue
@@ -25,6 +28,12 @@ const Hero = ({ children, onClickOpenLocations }) => {
           </span>
         </button>
       </div>
+      {/* We can create popup component from this code */}
+      {!!openSelectionPopup && (
+        <Popup isOpen={openSelectionPopup} onClose={() => setOpenSelectionPopup(false)} title="Select a Location">
+          <CitySelectionPopupContent />
+        </Popup>
+      )}
     </section>
   );
 };

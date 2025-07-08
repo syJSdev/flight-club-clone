@@ -5,6 +5,7 @@ import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import prettier from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -21,10 +22,10 @@ const compat = new FlatCompat({
 export default defineConfig([
   globalIgnores(['dist']),
   ...fixupConfigRules(
-    compat.extends('eslint:recommended', 'plugin:prettier/recommended', 'plugin:react-hooks/recommended'),
-    reactRefresh.configs.vite,
-    prettier.configs
+    compat.extends('eslint:recommended', 'plugin:react-hooks/recommended'),
+    reactRefresh.configs.vite
   ),
+  eslintPluginPrettierRecommended,
   {
     plugins: {
       prettier: fixupPluginRules(prettier),

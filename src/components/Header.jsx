@@ -5,13 +5,13 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [openMobileLocation, setOpenMobileLocation] = useState(false);
   const [subnav, setSubNav] = useState('');
-  const [location, setLocation] = useState(true);
+  const [location, setLocation] = useState(false);
   const [country, setCountry] = useState('usa');
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-40 bg-black font-sans text-white">
+    <header className="fixed top-0 right-0 left-0 z-40 bg-darkgreen font-sans text-white">
       <nav className="flex w-full items-center justify-between">
-        <div className="relative z-20 mx-auto flex w-full max-w-lg items-center lg:max-w-xl">
+        <div className="relative mx-auto flex w-full max-w-lg items-center lg:max-w-xl">
           <div className="hidden px-4 py-3 lg:flex">
             <a className="block" href="#">
               <img src="https://www.flightclubdartsusa.com/img/logo-white.png" className="block h-8" />
@@ -21,7 +21,7 @@ const Header = () => {
             <div className="flex items-center justify-center">
               <div className="mx-2 px-4">
                 <a
-                  className="text-1125 hover:text-red group flex items-center font-serif text-white capitalize transition-all"
+                  className="text-lg hover:text-red group flex items-center font-serif text-white capitalize transition-all"
                   href="#"
                   onMouseEnter={() => {
                     setLocation(true);
@@ -88,20 +88,20 @@ const Header = () => {
               <div className="flex gap-4 px-4">
                 <div className="hover:text-red text-sm uppercase transition-all lg:leading-3">
                   <button
-                    className="hover:bg-red flex flex-col items-center gap-1 bg-white px-4 pt-2 pb-1 text-center font-semibold text-black uppercase transition-all hover:text-white"
+                    className="hover:bg-red flex flex-col items-center gap-1 bg-white px-4 pt-2 pb-1 text-center font-semibold text-darkgreen uppercase transition-all hover:text-white"
                     type="button"
                   >
                     <span>Book now</span>
-                    <span className="text-button">2-12 Guests</span>
+                    <span className="text-xs">2-12 Guests</span>
                   </button>
                 </div>
                 <div className="hover:text-red text-sm uppercase transition-all lg:leading-3">
                   <button
-                    className="bg-green hover:bg-red hover:text-greebg-green flex flex-col items-center gap-1 px-4 pt-2 pb-1 text-center font-semibold text-white uppercase transition-all"
+                    className="bg-green hover:bg-red flex flex-col items-center gap-1 px-4 pt-2 pb-1 text-center font-semibold text-white uppercase transition-all"
                     type="button"
                   >
                     <span>Plan an event</span>
-                    <span className="text-button">13+ Guests</span>
+                    <span className="text-xs">13+ Guests</span>
                   </button>
                 </div>
               </div>
@@ -144,13 +144,13 @@ const Header = () => {
             </div>
             <div className="hover:text-red flex gap-4 px-4 text-sm uppercase transition-all">
               <button
-                className="hover:bg-red block bg-white px-4 pt-2 pb-1 font-semibold text-black uppercase transition-all hover:text-white"
+                className="hover:bg-red block bg-white px-4 pt-2 pb-1 font-semibold text-darkgreen uppercase transition-all hover:text-white"
                 type="button"
               >
                 Book 2-12 Guests
               </button>
               <button
-                className="hover:bg-red block bg-white px-4 pt-2 pb-1 font-semibold text-black uppercase transition-all hover:text-white"
+                className="hover:bg-red block bg-white px-4 pt-2 pb-1 font-semibold text-darkgreen uppercase transition-all hover:text-white"
                 type="button"
               >
                 Book 13+ guests
@@ -161,7 +161,7 @@ const Header = () => {
         <AnimatePresence initial={false}>
           {!!subnav && (
             <motion.div
-              className="absolute top-full right-0 left-0 z-10 bg-black"
+              className="absolute top-full right-0 left-0 z-10 bg-darkgreen"
               initial={{ opacity: 0, translateY: '-0.5rem' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 0, translateY: '-0.5rem' }}
@@ -181,7 +181,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/atlanta/atlanta/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Atlanta
                       </a>
@@ -191,7 +191,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/boston/seaport/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Boston
                       </a>
@@ -201,7 +201,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/chicago/wacker/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Chicago
                       </a>
@@ -211,7 +211,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/washington/dc/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         D.C.
                       </a>
@@ -221,7 +221,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/denver/denver/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Denver
                       </a>
@@ -231,7 +231,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/houston/regent-square/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Houston
                       </a>
@@ -241,7 +241,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/las-vegas/the-strip/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Las Vegas
                       </a>
@@ -251,7 +251,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/philadelphia/philadelphia/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         Philadelphia
                       </a>
@@ -261,7 +261,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href={'/st-louis/st-louis/' + subnav}
-                        className="hover:text-red font-serif text-lg transition-all"
+                        className="hover:text-red font-serif text-xl transition-all"
                       >
                         St. Louis
                       </a>
@@ -275,7 +275,7 @@ const Header = () => {
         <AnimatePresence initial={false}>
           {!!location && (
             <motion.div
-              className="absolute top-full right-0 left-0 z-10 bg-black"
+              className="absolute top-full right-0 left-0 z-10 bg-darkgreen"
               initial={{ opacity: 0, translateY: '-1.5rem' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 0, translateY: '-1.5rem' }}
@@ -295,7 +295,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/atlanta/atlanta"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Atlanta
                         </a>
@@ -304,7 +304,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/boston/seaport"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Boston
                         </a>
@@ -313,7 +313,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/chicago/wacker"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Chicago
                         </a>
@@ -322,7 +322,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/washington/dc"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           D.C.
                         </a>
@@ -331,7 +331,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/denver/denver"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Denver
                         </a>
@@ -340,7 +340,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/houston/regent-square"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Houston
                         </a>
@@ -349,7 +349,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/las-vegas/the-strip"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Las Vegas
                         </a>
@@ -358,7 +358,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/philadelphia/philadelphia"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Philadelphia
                         </a>
@@ -367,7 +367,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/st-louis/st-louis"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           St. Louis
                         </a>
@@ -376,7 +376,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/cincinnati/cincinnati"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Cincinnati
                         </a>
@@ -388,7 +388,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/dallas/addison"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Dallas-Addison
                         </a>
@@ -400,7 +400,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/new-york-city/new-york-city"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           New York City
                         </a>
@@ -412,7 +412,7 @@ const Header = () => {
                       <div className="relative px-4">
                         <a
                           href="/seattle/seattle"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Seattle
                         </a>
@@ -428,7 +428,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-bloomsbury"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Bloomsbury, London
                         </a>
@@ -437,7 +437,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-islington"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Islington, London
                         </a>
@@ -446,7 +446,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-shoreditch"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Shoreditch, London
                         </a>
@@ -455,7 +455,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-victoria"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Victoria, London
                         </a>
@@ -464,7 +464,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-temple-street"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Temple St, Birmingham
                         </a>
@@ -473,7 +473,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-bristol"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Corn St, Bristol
                         </a>
@@ -482,7 +482,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-cardiff"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           St Mary's St, Cardiff
                         </a>
@@ -491,7 +491,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-cheltenham"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Brewery Qtr, Cheltenham
                         </a>
@@ -500,7 +500,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-leeds"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Park Row, Leeds
                         </a>
@@ -509,7 +509,7 @@ const Header = () => {
                         <a
                           target="_blank"
                           href="https://flightclubdarts.com/location-king-street"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           King St, Manchester
                         </a>
@@ -521,7 +521,7 @@ const Header = () => {
                       <div className="px-4">
                         <a
                           href="https://flightclubdarts.com.au/location-fremantle"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           South Parade, Fremantle
                         </a>
@@ -529,7 +529,7 @@ const Header = () => {
                       <div className="px-4">
                         <a
                           href="https://flightclubdarts.com.au/location-perth"
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           Murray St, Perth
                         </a>
@@ -541,7 +541,7 @@ const Header = () => {
                       <div className="mb-4 px-4">
                         <button
                           onClick={() => setCountry('usa')}
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           FC USA
                         </button>
@@ -551,7 +551,7 @@ const Header = () => {
                       <div className="mb-4 px-4">
                         <button
                           onClick={() => setCountry('uk')}
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           FC UK
                         </button>
@@ -561,7 +561,7 @@ const Header = () => {
                       <div className="mb-4 px-4">
                         <button
                           onClick={() => setCountry('australia')}
-                          className="hover:text-red font-serif text-lg text-white transition-all"
+                          className="hover:text-red font-serif text-xl text-white transition-all"
                         >
                           FC Australia
                         </button>
@@ -571,7 +571,7 @@ const Header = () => {
                       <a
                         target="_blank"
                         href="https://flightclubdarts.com/"
-                        className="hover:text-red font-serif text-lg text-white transition-all"
+                        className="hover:text-red font-serif text-xl text-white transition-all"
                       >
                         See all Locations
                       </a>
@@ -584,10 +584,10 @@ const Header = () => {
         </AnimatePresence>
         <AnimatePresence initial={false}>
           {!!open && (
-            <motion.div className="pointer-events-auto fixed inset-0 z-10 flex flex-col items-center justify-center overflow-hidden bg-black lg:hidden">
+            <motion.div className="pointer-events-auto fixed inset-0 z-10 flex flex-col items-center justify-center overflow-hidden bg-darkgreen lg:hidden">
               <div className="flex px-4 py-3 lg:hidden">
                 <a className="block" href="#">
-                  <img src="/img/fc-logo-white.svg" className="block h-8" />
+                  <img src="https://www.flightclubdartsusa.com/img/logo-white.png" className="block h-8" />
                 </a>
               </div>
               {!openMobileLocation && (
@@ -621,11 +621,18 @@ const Header = () => {
                   </div>
 
                   <div className="hover:text-red py-4 text-center uppercase transition-all">
-                    <button
+                    {/* <button
                       className="btn-base bg-red hover:text-red font-semibold text-white transition-all hover:bg-white"
                       type="button"
                     >
                       Book Now
+                    </button> */}
+
+                    <button
+                      className="bg-red hover:text-red inline-block rounded-xs px-6 pt-4 pb-3 text-center text-sm font-semibold tracking-widest text-white uppercase transition-all hover:bg-white"
+                      type="button"
+                    >
+                      <span>Book now</span>
                     </button>
                   </div>
                 </div>

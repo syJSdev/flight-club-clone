@@ -55,13 +55,23 @@
 }
 
 @theme {
-  --color-black: #0e1915;
-  --color-red: rgb(239, 67, 88);
-  --color-green: rgb(0, 164, 121);
-  --breakpoint-xl: 80rem;
+  --color-darkgreen: #0e1915;
+  --color-red: #ef4358;
+  --color-green: #00a479;
+  --color-brand: #00a479;
+
+  /* https://tailwindcss.com/docs/responsive-design#overview */
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
-  --container-xl: 80rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  --container-sm: 40rem;
+  --container-md: 48rem;
   --container-lg: 64rem;
+  --container-xl: 80rem;
+  --container-2xl: 96rem;
 
   --font-sans:
     brandon, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
@@ -73,10 +83,7 @@
     didot, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif;
 
-  --text-lg: 1.25rem;
-  --text-1125: 1.125rem;
-
-  --text-button: 0.75rem;
+  --text-xs: 0.75rem;
 }
 
 @layer base {
