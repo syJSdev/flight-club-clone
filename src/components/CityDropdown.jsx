@@ -28,11 +28,11 @@ const CityDropdown = () => {
   };
 
   return (
-    <div className="w-full max-w-xs mx-auto mt-2 flex flex-col items-center">
+    <div className="mx-auto mt-2 flex w-full max-w-xs flex-col items-center">
       <div className="relative w-full">
         <select
           id="city"
-          className="block w-full px-5 py-3 pr-10 bg-white text-black border-none rounded-full shadow-lg font-sans font-bold text-base md:text-lg focus:ring-2 focus:ring-brand appearance-none cursor-pointer"
+          className="focus:ring-brand block w-full cursor-pointer appearance-none rounded-full border-none bg-white px-5 py-3 pr-10 font-sans text-base font-bold text-black shadow-lg focus:ring-2 md:text-lg"
           onChange={handleChange}
           defaultValue=""
           disabled={loading || !!error}
@@ -47,7 +47,7 @@ const CityDropdown = () => {
           ))}
         </select>
         <svg
-          className="pointer-events-none absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-black"
+          className="pointer-events-none absolute top-1/2 right-4 h-5 w-5 -translate-y-1/2 transform text-black"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"

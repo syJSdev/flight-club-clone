@@ -19,12 +19,12 @@ const venues = [
 ];
 
 const VenueGrid = () => (
-  <section className="bg-white py-8 px-4">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+  <section className="bg-white px-4 py-8">
+    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
       {venues.map((venue) => (
         <div key={venue.city} className="flex flex-col items-center">
-          <img src={venue.img} alt={venue.city} className="w-full h-48 object-cover rounded shadow-md" />
-          <span className="mt-2 text-sm italic text-gray-700">{venue.city}</span>
+          <img src={venue.img} alt={venue.city} className="h-48 w-full rounded object-cover shadow-md" />
+          <span className="mt-2 text-sm text-gray-700 italic">{venue.city}</span>
         </div>
       ))}
     </div>
