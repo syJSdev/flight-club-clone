@@ -31,4 +31,4 @@ const VenueGrid = () => (
   </section>
 );
 
-export default VenueGrid; 
+export default VenueGrid;

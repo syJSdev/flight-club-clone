@@ -2,14 +2,15 @@
   "name": "webapp",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "format": "prettier --write **/*.{js,jsx,css}",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "motion": "^12.23.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Welcome from './components/Welcome';
 import VenueGrid from './components/VenueGrid';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
