@@ -8,4 +8,4 @@ export async function getVenues() {
   console.log(json);
   cachedVenues = json.data;
   return cachedVenues;
-} 
+}

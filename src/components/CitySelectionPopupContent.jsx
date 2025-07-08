@@ -14,24 +14,24 @@ const CitySelectionPopupContent = () => {
   }, []);
 
   return (
-      <div className="px-6 pb-6 pt-2">
-        {loading && <div className="text-center">Loading...</div>}
-        {error && <div className="text-center text-red-500">{error}</div>}
-        <div className="flex flex-col gap-4">
-          {venues &&
-            venues.map((venue) => (
-              <a
-                key={venue.id}
-                className="rounded-md border border-black px-4 py-3 text-center text-base font-semibold tracking-widest uppercase transition-colors hover:bg-black hover:text-white"
-                href={`https://www.flightclubdartsusa.com${venue.uri}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {venue.title}
-              </a>
-            ))}
-        </div>
+    <div className="px-6 pt-2 pb-6">
+      {loading && <div className="text-center">Loading...</div>}
+      {error && <div className="text-center text-red-500">{error}</div>}
+      <div className="flex flex-col gap-4">
+        {venues &&
+          venues.map((venue) => (
+            <a
+              key={venue.id}
+              className="rounded-md border border-black px-4 py-3 text-center text-base font-semibold tracking-widest uppercase transition-colors hover:bg-black hover:text-white"
+              href={`https://www.flightclubdartsusa.com${venue.uri}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {venue.title}
+            </a>
+          ))}
       </div>
+    </div>
   );
 };
 

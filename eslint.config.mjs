@@ -6,7 +6,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import prettier from 'eslint-plugin-prettier';
+// import prettier from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -22,13 +22,16 @@ const compat = new FlatCompat({
 export default defineConfig([
   globalIgnores(['dist']),
   ...fixupConfigRules(
-    compat.extends('eslint:recommended', 'plugin:react-hooks/recommended'),
-    reactRefresh.configs.vite
+    compat.extends(
+      'eslint:recommended',
+      'plugin:react/recommended',
+      'plugin:react-hooks/recommended',
+      'plugin:jsx-a11y/recommended'
+    )
   ),
-  eslintPluginPrettierRecommended,
+  reactRefresh.configs.vite,
   {
     plugins: {
-      prettier: fixupPluginRules(prettier),
       react: fixupPluginRules(react),
       'react-hooks': fixupPluginRules(reactHooks),
     },
@@ -54,8 +57,7 @@ export default defineConfig([
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
-      'prettier/prettier': 'warn',
     },
   },
+  eslintPluginPrettierRecommended,
 ]);

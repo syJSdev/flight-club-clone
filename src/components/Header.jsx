@@ -9,7 +9,7 @@ const Header = () => {
   const [country, setCountry] = useState('usa');
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-40 bg-darkgreen font-sans text-white">
+    <header className="bg-darkgreen fixed top-0 right-0 left-0 z-40 font-sans text-white">
       <nav className="flex w-full items-center justify-between">
         <div className="relative mx-auto flex w-full max-w-lg items-center lg:max-w-xl">
           <div className="hidden px-4 py-3 lg:flex">
@@ -21,7 +21,7 @@ const Header = () => {
             <div className="flex items-center justify-center">
               <div className="mx-2 px-4">
                 <a
-                  className="text-lg hover:text-red group flex items-center font-serif text-white capitalize transition-all"
+                  className="hover:text-red group flex items-center font-serif text-lg text-white capitalize transition-all"
                   href="#"
                   onMouseEnter={() => {
                     setLocation(true);
@@ -88,7 +88,7 @@ const Header = () => {
               <div className="flex gap-4 px-4">
                 <div className="hover:text-red text-sm uppercase transition-all lg:leading-3">
                   <button
-                    className="hover:bg-red flex flex-col items-center gap-1 bg-white px-4 pt-2 pb-1 text-center font-semibold text-darkgreen uppercase transition-all hover:text-white"
+                    className="hover:bg-red text-darkgreen flex flex-col items-center gap-1 bg-white px-4 pt-2 pb-1 text-center font-semibold uppercase transition-all hover:text-white"
                     type="button"
                   >
                     <span>Book now</span>
@@ -144,13 +144,13 @@ const Header = () => {
             </div>
             <div className="hover:text-red flex gap-4 px-4 text-sm uppercase transition-all">
               <button
-                className="hover:bg-red block bg-white px-4 pt-2 pb-1 font-semibold text-darkgreen uppercase transition-all hover:text-white"
+                className="hover:bg-red text-darkgreen block bg-white px-4 pt-2 pb-1 font-semibold uppercase transition-all hover:text-white"
                 type="button"
               >
                 Book 2-12 Guests
               </button>
               <button
-                className="hover:bg-red block bg-white px-4 pt-2 pb-1 font-semibold text-darkgreen uppercase transition-all hover:text-white"
+                className="hover:bg-red text-darkgreen block bg-white px-4 pt-2 pb-1 font-semibold uppercase transition-all hover:text-white"
                 type="button"
               >
                 Book 13+ guests
@@ -161,7 +161,7 @@ const Header = () => {
         <AnimatePresence initial={false}>
           {!!subnav && (
             <motion.div
-              className="absolute top-full right-0 left-0 z-10 bg-darkgreen"
+              className="bg-darkgreen absolute top-full right-0 left-0 z-10"
               initial={{ opacity: 0, translateY: '-0.5rem' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 0, translateY: '-0.5rem' }}
@@ -275,7 +275,7 @@ const Header = () => {
         <AnimatePresence initial={false}>
           {!!location && (
             <motion.div
-              className="absolute top-full right-0 left-0 z-10 bg-darkgreen"
+              className="bg-darkgreen absolute top-full right-0 left-0 z-10"
               initial={{ opacity: 0, translateY: '-1.5rem' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 0, translateY: '-1.5rem' }}
@@ -584,7 +584,7 @@ const Header = () => {
         </AnimatePresence>
         <AnimatePresence initial={false}>
           {!!open && (
-            <motion.div className="pointer-events-auto fixed inset-0 z-10 flex flex-col items-center justify-center overflow-hidden bg-darkgreen lg:hidden">
+            <motion.div className="bg-darkgreen pointer-events-auto fixed inset-0 z-10 flex flex-col items-center justify-center overflow-hidden lg:hidden">
               <div className="flex px-4 py-3 lg:hidden">
                 <a className="block" href="#">
                   <img src="https://www.flightclubdartsusa.com/img/logo-white.png" className="block h-8" />
