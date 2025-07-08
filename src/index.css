@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("./font/brandon-grotesque-regular.woff2") format("woff2"),
+    url("./font/brandon-grotesque-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("./font/brandon-grotesque-bold.woff2") format("woff2"),
+    url("./font/brandon-grotesque-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  src: url("./font/brandon-grotesque-black.woff2") format("woff2"),
+    url("./font/brandon-grotesque-black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-black: #0e1915;
+  --color-red: rgb(239, 67, 88);
+  --color-green: rgb(0, 164, 121);
+  --breakpoint-xl: 80rem;
+  --breakpoint-lg: 64rem;
+  --container-xl: 80rem;
+  --container-lg: 64rem;
+
+  --font-sans: "Brandon Grotesque", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+  --font-brand: bebas, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+  --font-serif: didot, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+
+  --text-button: 0.75rem;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+}
