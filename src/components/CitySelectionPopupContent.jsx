@@ -21,9 +21,9 @@ const CitySelectionPopupContent = () => {
           {venues &&
             venues.map((venue) => (
               <a
-                key={venue.id || venue.title}
+                key={venue.id}
                 className="rounded-md border border-black px-4 py-3 text-center text-base font-semibold tracking-widest uppercase transition-colors hover:bg-black hover:text-white"
-                href={venue.uri}
+                href={`https://www.flightclubdartsusa.com${venue.uri}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
